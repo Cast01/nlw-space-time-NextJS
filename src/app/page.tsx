@@ -1,7 +1,7 @@
-import Image from 'next/image'
-
 export default function Home() {
   return (
-    <h1>Next13</h1>
+    <div className="min-h-screen bg-zinc-900 text-zinc-50">
+      <h1 className="text-4xl font-bold">Sua capsula do tempo</h1>
+    </div>
   )
 }
