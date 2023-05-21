@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import nlwLogo from '../assets/images/logo.svg'
+import Link from 'next/link'
 
 export function Main() {
     return (
@@ -15,12 +16,12 @@ export function Main() {
                     com o mundo! (se quiser)
                 </p>
             </div>
-            <a
-                href="#"
+            <Link
+                href="/memories/new"
                 className="w-fit rounded-full bg-green-500 px-5 py-3 font-baiJamJuree text-[#09090a] hover:bg-green-400"
             >
                 CADASTRAR LEMBRANÇA
-            </a>
+            </Link>
         </main>
     )
 }
