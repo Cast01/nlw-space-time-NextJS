@@ -18,7 +18,7 @@ export function Profile() {
                     <span>{name}</span>
                     <a
                         href={'api/auth/logout/'}
-                        className="h-full rounded-md bg-red-500 px-4 text-white transition-colors hover:bg-red-700"
+                        className="flex h-full items-center rounded-md bg-red-500 px-4 text-white transition-colors hover:bg-red-700"
                     >
                         Sair
                     </a>
