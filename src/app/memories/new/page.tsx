@@ -37,7 +37,7 @@ export default function NewMemory() {
                         <input
                             type="checkbox"
                             id="public"
-                            className="h-4 w-4 rounded border-gray-400 bg-gray-700 text-purple-500"
+                            className="h-6 w-6 rounded border-gray-400 bg-gray-700 text-purple-500"
                         />
                         Tornar memória pública
                     </label>
