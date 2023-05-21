@@ -1,0 +1,7 @@
+o children das nossas paginas são as current pages
+
+Ex:
+
+    app/layout.tsx recebe o retorno(children) do <Profile />(app/profile/layout.tsx) e do <Login />(app/login/layout.tsx)
+
+    app/images/layout.tsx recebe o retorno(children) do <FavoriteImages />(app/images/favotite-images/layout.tsx)
