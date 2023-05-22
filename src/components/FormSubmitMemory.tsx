@@ -2,10 +2,19 @@
 
 import { Camera } from 'lucide-react'
 import { MediaPicker } from './MediaPicker'
+import { ChangeEvent } from 'react'
 
 export function FormSubmitMemory() {
+    async function submitNewMemory(event: ChangeEvent<HTMLFormElement>) {
+        event.preventDefault()
+
+        const formData = new FormData(event.currentTarget)
+
+        console.log(Array.from(formData.entries()))
+    }
+
     return (
-        <form className="flex flex-1 flex-col gap-2">
+        <form onSubmit={submitNewMemory} className="flex flex-1 flex-col gap-2">
             <div className="flex items-center gap-3">
                 <div className="flex w-fit items-center gap-4">
                     <label
