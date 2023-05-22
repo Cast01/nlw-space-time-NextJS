@@ -1,10 +1,16 @@
 'use client'
 
-import { Camera } from 'lucide-react'
-import { MediaPicker } from './MediaPicker'
 import { ChangeEvent } from 'react'
 
+import { MediaPicker } from './MediaPicker'
+
+import Cookies from 'js-cookie'
+
+import { Camera } from 'lucide-react'
+
 export function FormSubmitMemory() {
+    console.log(Cookies.get('token'))
+
     async function submitNewMemory(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
 
