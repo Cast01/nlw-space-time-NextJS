@@ -1,22 +1,55 @@
 'use client'
 
 import { ChangeEvent } from 'react'
+import { useRouter } from 'next/navigation'
 
 import { MediaPicker } from './MediaPicker'
 
 import Cookies from 'js-cookie'
 
+import { api } from '@/lib/apiteste'
+
 import { Camera } from 'lucide-react'
 
 export function FormSubmitMemory() {
-    console.log(Cookies.get('token'))
+    const router = useRouter()
 
     async function submitNewMemory(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
 
-        console.log(Array.from(formData.entries()))
+        const fileToUpload = formData.get('coverUrl')
+
+        let coverUrl = ''
+
+        if (fileToUpload) {
+            const uploadFormData = new FormData()
+
+            uploadFormData.set('file', fileToUpload)
+
+            const uploadResponse = await api.post('/upload', uploadFormData)
+
+            coverUrl = uploadResponse.data.fileUrl
+        }
+
+        const token = Cookies.get('token')
+
+        await api.post(
+            '/memories',
+            {
+                coverUrl,
+                content: formData.get('content'),
+                isPublic: formData.get('isPublic'),
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        )
+
+        router.push('/')
     }
 
     return (
