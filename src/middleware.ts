@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
-    const token = request.cookies.get('token')?.value
+    const isAuthenticated = !!request.cookies.get('token')?.value
 
     const loginRoute = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`
 
-    if (!token) {
+    if (!isAuthenticated) {
         return NextResponse.redirect(loginRoute, {
             headers: {
-                'Set-Cookie': `redirectTo=${request.url}; path=/; HttpOnly; max-age=20;`,
+                'Set-Cookie': `redirectTo=${request.url}; path=/; HttpOnly; max-age=10;`,
             },
         })
     }
