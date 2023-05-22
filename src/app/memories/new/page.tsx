@@ -1,5 +1,6 @@
 'use client'
 
+import { MediaPicker } from '@/components/MediaPickerteste'
 import Link from 'next/link'
 import { Camera, CaretDoubleLeft } from 'phosphor-react'
 
@@ -24,11 +25,6 @@ export default function NewMemory() {
                             <Camera size={'1.5rem'} />
                             anexar media
                         </label>
-                        <input
-                            type="file"
-                            id="media"
-                            className="invisible w-0"
-                        />
                     </div>
                     <label
                         htmlFor="public"
@@ -42,10 +38,11 @@ export default function NewMemory() {
                         Tornar memória pública
                     </label>
                 </div>
+                <MediaPicker />
                 <textarea
                     name="content"
                     spellCheck={false}
-                    className="flex-1 resize-none rounded border-0 bg-transparent leading-relaxed text-gray-100 placeholder:text-gray-400"
+                    className="flex-1 resize-none rounded border-0 border-blue-500 bg-transparent text-base leading-relaxed text-gray-100 placeholder:text-gray-400"
                     placeholder="Fique livre para adicionar fotos, vídeos e relatos sobre essa experiência que você quer lembrar para sempre."
                 />
             </form>
