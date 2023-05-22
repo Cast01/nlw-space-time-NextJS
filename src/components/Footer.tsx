@@ -7,7 +7,7 @@ export function Footer() {
                     href="#"
                     className="text-blue-500 underline hover:text-blue-400"
                 >
-                    Rocketseat
+                    Rocketseatt
                 </a>
             </p>
         </footer>
