@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <body
                 className={`${roboto.variable} ${baiJamJuree.variable} bg-gray-900 font-sans text-gray-100`}
             >
-                <div className="grid min-h-screen grid-cols-2">
+                <div className="grid grid-cols-2">
                     <div className="relative flex h-full flex-col items-center justify-center overflow-hidden border-r border-white/10 bg-[url(../assets/images/bg-left-right.png)] bg-cover p-4">
                         {/* Blur */}
                         <div className="absolute -right-1/2 top-1/2 h-[288px] w-[526px] -translate-y-1/2 rounded-[50%] bg-purple-700 opacity-50 blur-full" />
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             <Footer />
                         </div>
                     </div>
-                    <div className="flex flex-col bg-[url(../assets/images/bg-left-right.png)] bg-cover p-16">
+                    <div className="flex max-h-screen flex-col bg-[url(../assets/images/bg-left-right.png)] bg-cover">
                         {children}
                     </div>
                 </div>
